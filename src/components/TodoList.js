@@ -3,14 +3,14 @@ import React from "react";
 function TodoList({ todos, handleComplete }) {
   return (
     <ul>
-      {todos
-        .filter((todo) => todo.isComplete == false)
-        .map((todo, index) => (
-          <li key={index}>
-            {todo.data}
+      {todos.map((todo, index) => (
+        <li key={index}>
+          {todo.data}
+          {!todo.isComplete && (
             <button onClick={() => handleComplete(todo.id)}>Complete</button>
-          </li>
-        ))}
+          )}
+        </li>
+      ))}
     </ul>
   );
 }
