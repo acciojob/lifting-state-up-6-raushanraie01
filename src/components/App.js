@@ -7,10 +7,13 @@ const App = () => {
     { id: 2, data: "Build a React app", isComplete: false },
     { id: 3, data: "Deploy the React app", isComplete: false },
   ]);
+  console.group("todos", todos);
   function handleComplete(id) {
-    const todo = todos.find((todo) => todo.id === id);
-    todo.isComplete = true;
-    setTodos((prev) => [...prev, todo]);
+    setTodos((prev) =>
+      prev.map((todo) => {
+        return todo.id == id ? { ...todo, isComplete: true } : todo;
+      }),
+    );
   }
 
   return (
