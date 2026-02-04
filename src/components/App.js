@@ -7,7 +7,6 @@ const App = () => {
     { id: 2, data: "Build a React app", completed: false },
     { id: 3, data: "Deploy the React app", completed: false },
   ]);
-  console.group("todos", todos);
   function handleComplete(id) {
     setTodos((prev) =>
       prev.map((todo) => {
